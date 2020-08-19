@@ -71,14 +71,21 @@ function validar(){
     }
 
     var telefono
-    telefono = document.getElementById("telefono").value;  
+    var telefonoanumero
 
-    if (usuario === ""){
+    telefono = document.getElementById("telefono").value;  
+    telefonoanumero = Number(telefono);
+
+    if (telefono === ""){
         alert("Todos los campos son obligatorios");
         return false;
     }
     else if (telefono.length>15){
         alert("Tu número de teléfono cantidad de caracteres");
+        return false;
+    }
+    else if(Number.isNaN(telefonoanumero)){
+        alert("Ingrese un número válido");
         return false;
     }
 
